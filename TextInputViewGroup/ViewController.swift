@@ -11,17 +11,25 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var textView: TIVTextView!
+    @IBOutlet weak var textField: TIVTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         textView.delegate = self;
-        textView.backgroundColor = UIColor.brownColor()
         textView.placeHolderText = NSAttributedString(string: "请输入评论， 不超过20个字", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()])
         
         textView.textView.backgroundColor = UIColor.grayColor()
         textView.tipLabel.backgroundColor = UIColor.orangeColor()
+        
+        
+        textField.delegate = self
+        textField.placeHolderText = NSAttributedString(string: "请输入评论， 不超过20个字", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()])
+        textField.textField.backgroundColor = UIColor.grayColor()
+        textField.tipLabel.backgroundColor = UIColor.orangeColor()
+        textField.tipLabel.font = UIFont.systemFontOfSize(8, weight: UIFontWeightLight)
+        textField.tipLabelHeight = 10;
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +39,20 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+}
+
+extension ViewController:TIVTextFieldDelegate{
+    func textField(didChanged textField: TIVTextField) -> (String, Bool) {
+        let maxCount = self.maxAllowCharactersCount
+        let currentTextCount = textField.currentText.characters.count
+        
+        let exccedCount = currentTextCount - maxCount;
+        if exccedCount > 0{//excced the max
+            return ("超过\(exccedCount)个文字", true)
+        }else{
+            return ("", false)
+        }
     }
 }
 

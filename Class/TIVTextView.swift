@@ -38,7 +38,7 @@ class TIVTextView: UIView {
     }
     
     //property about tip label
-    let tipLabelHeight:CGFloat = 20.0
+    var tipLabelHeight:CGFloat = 20.0//you can custom tip label height
     private var tipLabelHeightConstraint:NSLayoutConstraint?
     
     //internal controls
@@ -108,7 +108,7 @@ class TIVTextView: UIView {
         self.addConstraint(NSLayoutConstraint(item: placeHolderLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 4))
         self.addConstraint(NSLayoutConstraint(item: placeHolderLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 4))
         self.addConstraint(NSLayoutConstraint(item: placeHolderLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 4))
-        self.addConstraint(NSLayoutConstraint(item: placeHolderLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 20))
+        self.addConstraint(NSLayoutConstraint(item: placeHolderLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: tipLabelHeight))
     }
 }
 
@@ -155,7 +155,7 @@ extension TIVTextView: UITextViewDelegate{
                     weakSelf.isExceedThanMaxAllowCharactersCount = info.isMore
 
                     if weakSelf.isExceedThanMaxAllowCharactersCount{
-                        weakSelf.tipLabelHeightConstraint?.constant = 20;
+                        weakSelf.tipLabelHeightConstraint?.constant = weakSelf.tipLabelHeight;
                         weakSelf.needsUpdateConstraints()
                         
                         weakSelf.tipLabel.hidden = false;

@@ -25,13 +25,23 @@
                                     <constraint firstAttribute="height" constant="128" id="Kht-d2-N2i"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbL-Ix-hcR" customClass="TIVTextField" customModule="TextInputViewGroup" customModuleProvider="target">
+                                <rect key="frame" x="180" y="85" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.45882352939999999" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="fYV-06-w4V"/>
+                                    <constraint firstAttribute="height" constant="128" id="ktt-VS-hMN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ANR-WA-XQ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9xH-1G-jfe"/>
                             <constraint firstItem="ANR-WA-XQ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EiN-SK-6rl"/>
                             <constraint firstItem="ANR-WA-XQ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qhl-nS-mxg"/>
+                            <constraint firstItem="ANR-WA-XQ7" firstAttribute="top" secondItem="WbL-Ix-hcR" secondAttribute="bottom" constant="23" id="fc2-It-zdX"/>
                             <constraint firstItem="ANR-WA-XQ7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mQ0-EO-3Hv"/>
+                            <constraint firstItem="WbL-Ix-hcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mRA-37-J64"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -41,6 +51,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="textField" destination="WbL-Ix-hcR" id="UyD-9P-rsV"/>
                         <outlet property="textView" destination="ANR-WA-XQ7" id="HSv-la-G3c"/>
                     </connections>
                 </viewController>
