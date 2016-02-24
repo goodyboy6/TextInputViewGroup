@@ -79,7 +79,7 @@ class TIVTextView: UIView {
         
         tipLabel.textColor = UIColor.redColor()
         tipLabel.textAlignment = NSTextAlignment.Right
-        tipLabel.font = UIFont.systemFontOfSize(12, weight: UIFontWeightLight)
+        tipLabel.font = UIFont.systemFontOfSize(12)
         
         self.addSubview(textView)
         self.addSubview(tipLabel)

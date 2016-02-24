@@ -19,16 +19,12 @@ class ViewController: UIViewController {
         
         textView.delegate = self;
         textView.placeHolderText = NSAttributedString(string: "请输入评论， 不超过20个字", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()])
-        
-        textView.textView.backgroundColor = UIColor.grayColor()
-        textView.tipLabel.backgroundColor = UIColor.orangeColor()
-        
-        
+        textField.tipLabel.font = UIFont.systemFontOfSize(16)
+        textField.tipLabelHeight = 18;
+
         textField.delegate = self
         textField.placeHolderText = NSAttributedString(string: "请输入评论， 不超过20个字", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()])
-        textField.textField.backgroundColor = UIColor.grayColor()
-        textField.tipLabel.backgroundColor = UIColor.orangeColor()
-        textField.tipLabel.font = UIFont.systemFontOfSize(8, weight: UIFontWeightLight)
+        textField.tipLabel.font = UIFont.systemFontOfSize(8)
         textField.tipLabelHeight = 10;
     }
 
@@ -65,23 +61,19 @@ extension ViewController:TIVTextViewDelegate{
         }
     }
     
-    func textView(didBeginEditing textView:TIVTextView)
-    {
+    func textView(didBeginEditing textView:TIVTextView){
         print("text view did begin editing")
     }
     
-    func textView(didEndEditing textView:TIVTextView)
-    {
+    func textView(didEndEditing textView:TIVTextView){
         print("text view did end editing")
     }
     
-    func textView(shouldEndEditing  textView:TIVTextView) -> Bool
-    {
+    func textView(shouldEndEditing  textView:TIVTextView) -> Bool{
         return true
     }
     
-    func textView(didChanged textView:TIVTextView) -> (String, Bool)
-    {
+    func textView(didChanged textView:TIVTextView) -> (String, Bool){
         let maxCount = self.maxAllowCharactersCount
         let currentTextCount = textView.currentText.characters.count
         
