@@ -91,8 +91,7 @@ class TIVTextField: UIView {
         }
     }
     
-    private func setupSubViews()
-    {
+    private func setupSubViews(){
         //config subview
         textField.textColor = UIColor.blackColor();
         textField.addTarget(self, action: Selector("textFieldDidChanged:"), forControlEvents: UIControlEvents.EditingChanged)

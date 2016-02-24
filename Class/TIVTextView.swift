@@ -71,8 +71,7 @@ class TIVTextView: UIView {
         self.setupSubViews()
     }
 
-    private func setupSubViews()
-    {
+    private func setupSubViews(){
         //config subview
         textView.delegate = self;
         textView.textColor = UIColor.blackColor();
