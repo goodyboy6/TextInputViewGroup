@@ -104,9 +104,10 @@
 		317018B41C7D842E008BD4D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TIV;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = yixiaoluo;
+				ORGANIZATIONNAME = alibaba.com;
 				TargetAttributes = {
 					317018BB1C7D842E008BD4D2 = {
 						CreatedOnToolsVersion = 7.2.1;
