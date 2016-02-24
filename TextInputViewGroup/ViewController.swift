@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         
         let textView:TIVTextView = TIVTextView(frame: CGRectMake(100, 100, 200, 200), _delegate: self)
         textView.backgroundColor = UIColor.brownColor()
-        
+        textView.placeHolderText = NSAttributedString(string: "请输入评论， 不超过20个字", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()])
         
         textView.textView.backgroundColor = UIColor.grayColor()
         textView.tipLabel.backgroundColor = UIColor.orangeColor()

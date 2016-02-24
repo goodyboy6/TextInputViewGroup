@@ -29,18 +29,28 @@ class TIVTextView: UIView {
         return self.textView.text
     }
     
+    //place holder
+    //tip: place holder文字大小最好和输入框内文字的大小相同
+    var placeHolderText:NSAttributedString?{
+        didSet{
+            self.placeHolderLabel.attributedText = placeHolderText
+        }
+    }
+    
     //提示文字属性
     let tipLabelHeight:CGFloat = 20.0
 
     //内部控件
     private(set) var textView:UITextView;
     private(set) var tipLabel:UILabel;
+    private var placeHolderLabel:TIVLabel;
 
     init(frame: CGRect, _delegate:TIVTextViewDelegate) {
         //初始化
         delegate = _delegate;
-        textView = UITextView(frame:CGRectMake(0, 0, frame.size.width, frame.size.height));
+        textView = UITextView(frame:CGRectMake(0, 0, frame.size.width, frame.size.height))
         tipLabel = UILabel(frame: CGRectMake(0, frame.size.height, frame.size.width, 0))
+        placeHolderLabel = TIVLabel(frame: CGRectMake(4, 4, frame.size.width, 20))
         
         super.init(frame: frame)
         
@@ -54,6 +64,7 @@ class TIVTextView: UIView {
         
         self.addSubview(textView)
         self.addSubview(tipLabel)
+        self.addSubview(placeHolderLabel)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -102,6 +113,8 @@ extension TIVTextView: UITextViewDelegate{
                         weakSelf.textView.frame = CGRectMake(0, 0, width, height)
                         weakSelf.tipLabel.hidden = true;
                     }
+                    
+                    weakSelf.placeHolderLabel.hidden = weakSelf.currentText.characters.count != 0
                 })
             }
         }

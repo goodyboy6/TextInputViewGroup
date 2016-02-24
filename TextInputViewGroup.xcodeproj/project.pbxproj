@@ -13,6 +13,7 @@
 		317018C71C7D842E008BD4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317018C61C7D842E008BD4D2 /* Assets.xcassets */; };
 		317018CA1C7D842E008BD4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317018C81C7D842E008BD4D2 /* LaunchScreen.storyboard */; };
 		317018D31C7D84B8008BD4D2 /* TIVTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317018D21C7D84B7008BD4D2 /* TIVTextView.swift */; };
+		317018D51C7DA53F008BD4D2 /* TIVLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317018D41C7DA53F008BD4D2 /* TIVLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		317018C91C7D842E008BD4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		317018CB1C7D842E008BD4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317018D21C7D84B7008BD4D2 /* TIVTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TIVTextView.swift; sourceTree = "<group>"; };
+		317018D41C7DA53F008BD4D2 /* TIVLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TIVLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		317018D11C7D8466008BD4D2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				317018D41C7DA53F008BD4D2 /* TIVLabel.swift */,
 				317018D21C7D84B7008BD4D2 /* TIVTextView.swift */,
 			);
 			path = Class;
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317018D51C7DA53F008BD4D2 /* TIVLabel.swift in Sources */,
 				317018D31C7D84B8008BD4D2 /* TIVTextView.swift in Sources */,
 				317018C21C7D842E008BD4D2 /* ViewController.swift in Sources */,
 				317018C01C7D842E008BD4D2 /* AppDelegate.swift in Sources */,
@@ -298,6 +302,7 @@
 				317018D01C7D842E008BD4D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
