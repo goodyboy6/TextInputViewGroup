@@ -7,11 +7,12 @@ The idea is derived from the view group of Android.  An instance UITextView/UITe
 pod 'TextInputViewGroup', '~> 1.0.3'       support iOS>=8.0
 
 ##code demo
-you can init it [initWithFrame:] , certainly, from storyboard is OK. The following code demo is from storyboard. 
+You can init it [initWithFrame:] , certainly, from storyboard is OK. The following code  is UITextView demo from storyboard. UITextField usage is similar to UITextView.
 <pre><code>
 class ViewController: UIViewController {
+
     @IBOutlet weak var textView: TIVTextView!
-    @IBOutlet weak var textField: TIVTextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,6 +47,7 @@ extension ViewController:TIVTextViewDelegate{
     func textView(didChanged textView:TIVTextView) -> (String, Bool){
         let maxCount = self.maxAllowCharactersCount
         let currentTextCount = textView.currentText.characters.count
+        
         let exccedCount = currentTextCount - maxCount;
         if exccedCount > 0{//excced the max
             return ("超过\(exccedCount)个文字", true)
