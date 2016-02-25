@@ -8,7 +8,7 @@ pod 'TextInputViewGroup', '~> 1.0.3'       support iOS>=8.0
 
 ##code demo
 you can init it [initWithFrame:] , certainly, from storyboard is OK. The following code demo is from storyboard. 
-<code><pre>
+<pre><code>
 class ViewController: UIViewController {
     @IBOutlet weak var textView: TIVTextView!
     @IBOutlet weak var textField: TIVTextField!
@@ -54,4 +54,4 @@ extension ViewController:TIVTextViewDelegate{
         }
     }
 }
-</pre></code>
+</code></pre>
