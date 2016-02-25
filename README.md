@@ -4,11 +4,11 @@ The idea is derived from the view group of Android.  An instance UITextView/UITe
 
 
 #CocoaPods install
-pod 'TextInputViewGroup', '~> 1.0.3'   support iOS>=8.0
+pod 'TextInputViewGroup', '~> 1.0.3'       support iOS>=8.0
 
 ##code demo
 you can init it [initWithFrame:] , certainly, from storyboard is OK. The following code demo is from storyboard. 
-<code>
+<code><pre>
 class ViewController: UIViewController {
     @IBOutlet weak var textView: TIVTextView!
     @IBOutlet weak var textField: TIVTextField!
@@ -54,4 +54,4 @@ extension ViewController:TIVTextViewDelegate{
         }
     }
 }
-</code>
+</pre></code>
